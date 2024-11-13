@@ -1,0 +1,792 @@
+/*
+Theme Name: Pop&Art
+Theme URI: /
+Author: brinis takwa
+Author URI: /
+Description: A custom HTML and CSS theme for Pop&Art
+Version: 1.0
+*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;900&display=swap');
+/* Apply Roboto Thin (100) to the body */
+body {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* Apply Roboto Black (900) to headings and bold text */
+h1, h2, h3, .bold-text {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 900;
+}
+/*hader*/
+/* Style de base pour le header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+header .logo img {
+    height: 50px;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+header ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+header ul li {
+    display: inline-block;
+}
+
+header ul li a {
+    text-decoration: none;
+    color: #333;
+    padding: 10px;
+    font-size: 16px;
+}
+
+header .nav-icons {
+    display: flex;
+    gap: 10px;
+}
+
+header .nav-icons a img {
+    height: 24px;
+}
+
+/* Style pour les écrans plus petits (mobile) */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header ul {
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+    }
+
+    header .nav-icons {
+        margin-top: 10px;
+    }
+
+    /* Cacher le menu et afficher un bouton burger */
+    header ul {
+        display: none;
+    }
+
+    header .nav-icons {
+        display: none;
+    }
+}
+
+/* Style pour les très petits écrans (smartphones) */
+@media (max-width: 480px) {
+    header ul li a {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    header .nav-icons a img {
+        height: 20px;
+    }
+}
+/* Popup container */
+.popup-overlay {
+    display: none;
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+/* Popup content */
+.popup-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+/* Close button */
+.close-popup {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Style the iframe */
+.popup-content iframe {
+    width: 100%;
+    height: 600px;
+    border-radius: 10px;
+    border: none;
+}
+
+/*footer*/
+
+footer {
+    background-color: #1e1e1e;
+    color: #ffffff; 
+    padding: 20px 20px;
+    font-family: Arial, sans-serif;
+}
+
+footer .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap; 
+    gap: 20px; 
+}
+
+footer .column {
+    flex: 1; 
+    max-width: 250px; 
+    min-width: 200px; 
+    margin: 0 20px;
+}
+
+footer .logo img {
+    width: 50px;
+}
+
+footer .description {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+footer h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+footer ul li {
+    margin-bottom: 10px;
+}
+
+footer ul li a {
+    color: #bbbbbb;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+footer ul li a:hover {
+    color: #ff5722; 
+}
+
+footer .promo h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #ff5722; 
+}
+
+footer .promo p {
+    font-size: 14px;
+}
+
+.footer-content {
+    border-top: 1px solid #333333;
+    text-align: center;
+    font-size: 14px;
+    color: #bbbbbb;
+    margin-top: 10px;
+}
+
+.footer-content p {
+    margin: 0;
+}
+
+footer .social-icons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+footer .social-icons a img {
+    width: 24px; /* Size for social icons */
+    transition: transform 0.3s ease;
+}
+
+footer .social-icons a img:hover {
+    transform: scale(1.1); /* Hover effect for social icons */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    footer .container {
+        flex-direction: column; /* Stack columns vertically on smaller screens */
+        align-items: center;
+    }
+
+    footer .column {
+        max-width: 100%; /* Full width for each column on mobile */
+        margin-bottom: 30px; /* Add space between columns */
+    }
+}
+
+
+/*    hero */
+.hero {
+    background-image: url('/assets/images/background-image.jpg');
+    background-size: cover; /* Couvrir toute la section */
+    background-position: center; /* Centrer l'image */
+    height: 400px; /* Ajuste la hauteur selon tes besoins */
+    display: flex;
+    align-items: center; /* Centrer le contenu verticalement */
+    justify-content: center; /* Centrer le contenu horizontalement */
+    color: black; /* Couleur du texte */
+    text-align: center; /* Centrer le texte */
+    padding: 20px; /* Espacement interne */
+}
+
+.hero-content h1 {
+    font-size: 2.5rem; /* Taille du titre */
+    margin-bottom: 10px; /* Espacement sous le titre */
+}
+
+.hero-content p {
+    font-size: 1.2rem; /* Taille de la description */
+    max-width: 600px; /* Largeur maximale pour le texte */
+}
+
+
+/*product*/
+
+.products-title {
+    text-align: center;
+}
+
+.product-grid {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap to the next line */
+    justify-content: center; /* Center items in the grid */
+    text-align: center;
+}
+
+.product-item {
+    flex: 1 1 200px; /* Flex-grow, flex-shrink, and base width */
+    margin: 10px; /* Add margin between items */
+    max-width: 200px; /* Limit max width of product items */
+}
+.product-item img {
+    width: 200px;
+}
+.custom-section {
+    padding: 40px 20px; /* Internal spacing */
+    background-color: #f9f9f9; /* Background color of the section */
+}
+
+.container {
+    display: flex; /* Use flexbox for responsive layout */
+    align-items: center; /* Center vertically */
+    justify-content: space-between; /* Space out columns */
+    max-width: 1200px; /* Max width of the section */
+    margin: 0 auto; /* Center the section in the container */
+}
+
+.image-column {
+    flex: 1; /* Take equal space */
+    text-align: center; /* Center the image */
+}
+
+.presentation-image {
+    max-width: 100%; /* Ensure the image is responsive */
+    height: auto; /* Maintain image proportions */
+}
+
+.text-column {
+    flex: 1; /* Take equal space */
+    padding: 20px; /* Internal spacing */
+}
+
+h2 {
+    font-size: 2rem; /* Title size */
+    margin-bottom: 20px; /* Spacing under the title */
+}
+
+p {
+    margin-bottom: 15px; /* Spacing between paragraphs */
+    line-height: 1.6; /* Line height for better readability */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .product-item {
+        flex: 1 1 100%; /* Full width on small screens */
+        max-width: 100%; /* Remove max width restriction */
+    }
+
+    h2 {
+        font-size: 1.5rem; /* Smaller title size */
+    }
+
+    .custom-section {
+        padding: 20px 10px; /* Reduce padding */
+    }
+}
+
+@media (max-width: 480px) {
+    h2 {
+        font-size: 1.25rem; /* Even smaller title size */
+    }
+}
+
+
+.cta-button {
+    display: inline-block; /* Faire en sorte que le bouton ait un espacement */
+    padding: 10px 20px; /* Espacement interne du bouton */
+    background-color: #007bff; /* Couleur de fond du bouton */
+    color: white; /* Couleur du texte du bouton */
+    text-decoration: none; /* Enlever le soulignement */
+    border-radius: 5px; /* Coins arrondis */
+    transition: background-color 0.3s; /* Transition pour le survol */
+}
+
+.cta-button:hover {
+    background-color: #0056b3; /* Couleur de fond au survol */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.product {
+    width: 23%;
+    margin-bottom: 20px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: transform 0.2s;
+}
+.product img {
+    width: 100%;
+    height: auto;
+}
+
+.product h3 {
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+.price {
+    font-size: 18px;
+    color: #333;
+}
+
+
+/*avis*/
+.testimonials-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.testimonial {
+    flex: 1;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 30%; /* Ensure three elements stay on one line */
+}
+
+.testimonial img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.testimonial p {
+    margin: 10px 0;
+}
+
+.name {
+    font-weight: bold;
+}
+
+.country {
+    color: #666;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .testimonial {
+        max-width: 30%; /* Make sure the width is still 3 per row on larger tablets */
+    }
+}
+
+@media (max-width: 768px) {
+    .testimonial {
+        max-width: 45%; /* On tablets, 2 per row */
+    }
+}
+
+@media (max-width: 480px) {
+    .testimonial {
+        max-width: 100%; /* On mobile, 1 per row */
+    }
+}
+/* customer-review */
+.customer-review {
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+.customer-review h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.rating {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rating-value {
+    margin-right: 10px;
+}
+
+.stars {
+    display: inline-flex;
+}
+
+.stars .star {
+    color: gold;
+    font-size: 1em;
+    margin: 0 2px;
+}
+
+.stars .half {
+    position: relative;
+}
+
+.stars .half:before {
+    content: '\2605'; /* Unicode star character */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    overflow: hidden;
+    color: gold;
+}
+
+.review-count {
+    font-size: 16px;
+    color: #666;
+}
+/* Responsive pour les écrans de moins de 768px (tablettes) */
+@media (max-width: 768px) {
+    .testimonials-container {
+        flex-direction: column; /* Les témoignages s'empilent verticalement */
+        align-items: center;
+    }
+
+    .testimonial {
+        flex: 1 1 100%; /* Chaque témoignage occupe 100% de la largeur */
+        margin-bottom: 20px; /* Espace entre les témoignages */
+    }
+
+    .customer-review h2 {
+        font-size: 20px;
+    }
+
+    .rating-value {
+        font-size: 24px;
+    }
+
+    .stars .star {
+        font-size: 20px;
+    }
+}
+
+/* Responsive pour les écrans de moins de 480px (smartphones) */
+@media (max-width: 480px) {
+    .customer-review h2 {
+        font-size: 18px;
+    }
+
+    .rating-value {
+        font-size: 20px;
+    }
+
+    .stars .star {
+        font-size: 18px;
+    }
+
+    .testimonial img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .testimonial p {
+        font-size: 14px;
+    }
+}
+
+/*contact*/
+
+#contact {
+    padding: 40px 20px; /* Internal padding */
+    background-color: #f9f9f9; /* Light background color */
+    max-width: 600px; /* Max width for the form */
+    margin: 20px auto; /* Center the section */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.contact-h2 {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+#contact-form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input, textarea, select {
+    padding: 10px; 
+    margin-bottom: 15px; 
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    width: 100%;
+}
+
+input:focus, textarea:focus {
+    border-color: #007bff;
+    outline: none; 
+}
+
+button {
+    padding: 10px; 
+    background-color: #007bff; 
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    width: 150px;
+}
+
+button:hover {
+    background-color: #0056b3; 
+}
+
+/* Style pour le toast */
+.toast {
+    visibility: hidden; /* Masqué par défaut */
+    min-width: 250px;
+    margin: 0 auto;
+    background-color: #4CAF50; /* Couleur verte pour succès */
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 50px;
+    font-size: 17px;
+    opacity: 0; /* Transparent par défaut */
+    transition: opacity 0.5s, visibility 0.5s; /* Animation de transition */
+}
+
+/* Apparition du toast */
+.toast.show {
+    visibility: visible;
+    opacity: 1; /* Le toast devient visible */
+}
+/* Style de la modale */
+.modal {
+    display: none; /* Masqué par défaut */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fond sombre */
+}
+
+/* Contenu de la modale */
+.modal-content {
+    background-color: white;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%; /* Largeur de la fenêtre */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Bouton pour fermer la modale */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Bouton pour ouvrir le popup */
+#open-popup-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* partenaires*/
+
+/* Base styles */
+.partners-title {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.partners-description {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    color: #555;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: justify;
+}
+
+.partners-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Flexible grid for responsive layout */
+    gap: 20px;
+    justify-items: center;
+    align-items: center;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.partner-item {
+    text-align: center;
+}
+
+.partner-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.partner-item p {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #333;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .partners-description {
+        font-size: 1.1rem;
+        max-width: 90%; /* More space on smaller screens */
+    }
+
+    .partners-title {
+        font-size: 1.8rem;
+    }
+
+    .partner-item p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .partners-description {
+        font-size: 1rem;
+        max-width: 95%;
+        line-height: 1.4;
+    }
+
+    .partners-title {
+        font-size: 1.5rem;
+    }
+
+    .partner-item p {
+        font-size: 0.8rem;
+    }
+}
