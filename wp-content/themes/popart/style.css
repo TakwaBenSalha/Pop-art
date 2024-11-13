@@ -271,7 +271,7 @@ footer .social-icons a img:hover {
 
 /*    hero */
 .hero {
-    background-image: url('/assets/images/background-image.jpg');
+    background-image: url('images/background-image.jpg');
     background-size: cover; /* Couvrir toute la section */
     background-position: center; /* Centrer l'image */
     height: 400px; /* Ajuste la hauteur selon tes besoins */
